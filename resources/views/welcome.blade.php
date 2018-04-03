@@ -28,9 +28,9 @@
                     @endfor
                 </div>
             </div>
-            <div class="col-lg-10 col-md-9">
-                <div class="content">
-                    <div class="d-flex justify-content-end p-4">
+            <div class="col-lg-10 col-md-9" style="background-image: url(images/bg.png)">
+                <div class="content" >
+                    <div class="d-flex justify-content-end p-3">
                         <div class="" style="width: 136px">
                             <div class="countdown">
                                 <div class="countdown-container" id="countdown"></div>
@@ -44,6 +44,9 @@
                                 </div>
                             </script>
                         </div>
+                    </div>
+                    <div class="d-flex justify-content-center title-name">
+                        <span>Triệu phú IT</span>
                     </div>
                     <div class="question-container p-4">
                         <div class="question-content">
