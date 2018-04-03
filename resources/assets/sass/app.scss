@@ -1,5 +1,6 @@
 // Fonts
 @import "font";
+@import "~font-awesome/scss/font-awesome";
 
 // Variables
 @import "variables";
@@ -21,6 +22,15 @@
     background-color: rgb(25, 29, 36);
     margin-left: -15px;
     margin-right: -15px;
-    height: 95vh;
+    height: 92vh;
     color: rgb(198, 157, 74);
+    // color: #2a78af;
+}
+
+.footer {
+    padding: 0px 30px;
+    height: 3vh;
+    font-size: 1.7vh;
+    background-color: slategray;
+    color: silver;
 }

@@ -3,13 +3,14 @@
     margin-right: -15px;
     background-color: rgb(37, 41, 51);
     color: #c3c3c3;
+    padding: 2vh 0;
     .question-group {
-        height: 5.2777777778vh;
         padding-left: 20px;
     }
     .question-item {
-        height: 5.2777777778vh;
         padding-left: 40px;
-        // border-bottom: solid 1px #c3c3c3;
+    }
+    .question-item, .question-group {
+        height: 4.8888889vh;
     }
 }

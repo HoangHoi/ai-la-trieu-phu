@@ -34,7 +34,7 @@ labels.forEach(function(label, i) {
     }));
 });
 // Starts the countdown
-$example.countdown(nextYear, function(event) {
+$example.countdown(nextYear, (event) => {
     var newDate = event.strftime('%M:%S'),
         data;
     if (newDate !== nextDate) {
@@ -46,7 +46,7 @@ $example.countdown(nextYear, function(event) {
             'next': strfobj(nextDate)
         };
         // Apply the new values to each node that changed
-        diff(data.curr, data.next).forEach(function(label) {
+        diff(data.curr, data.next).forEach((label) => {
             var selector = '.%s'.replace(/%s/, label),
                 $node = $example.find(selector);
             // Update the node
@@ -54,7 +54,7 @@ $example.countdown(nextYear, function(event) {
             $node.find('.curr').text(data.curr[label]);
             $node.find('.next').text(data.next[label]);
             // Wait for a repaint to then flip
-            _.delay(function($node) {
+            _.delay(($node) => {
                 $node.addClass('flip');
             }, 50, $node);
         });
