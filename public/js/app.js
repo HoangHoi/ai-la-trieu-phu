@@ -36092,11 +36092,11 @@ module.exports = function spread(callback) {
 /* 37 */
 /***/ (function(module, exports) {
 
-var labels = ['weeks', 'days', 'hours', 'minutes', 'seconds'],
+var labels = ['minutes', 'seconds'],
     nextYear = new Date().getFullYear() + 1 + '/01/01',
     template = _.template($('#main-example-template').html()),
-    currDate = '00:00:00:00:00',
-    nextDate = '00:00:00:00:00',
+    currDate = '00:00',
+    nextDate = '00:00',
     parser = /([0-9]{2})/gi,
     $example = $('#main-example');
 // Parse countdown string to an object
@@ -36129,7 +36129,7 @@ labels.forEach(function (label, i) {
 });
 // Starts the countdown
 $example.countdown(nextYear, function (event) {
-    var newDate = event.strftime('%w:%d:%H:%M:%S'),
+    var newDate = event.strftime('%M:%S'),
         data;
     if (newDate !== nextDate) {
         currDate = nextDate;

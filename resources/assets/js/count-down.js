@@ -1,10 +1,10 @@
 var labels = ['minutes', 'seconds'],
     nextYear = (new Date().getFullYear() + 1) + '/01/01',
-    template = _.template($('#main-example-template').html()),
+    template = _.template($('#countdown-template').html()),
     currDate = '00:00',
     nextDate = '00:00',
     parser = /([0-9]{2})/gi,
-    $example = $('#main-example');
+    $example = $('#countdown');
 // Parse countdown string to an object
 function strfobj(str) {
     var parsed = str.match(parser),
