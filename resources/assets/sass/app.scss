@@ -2,6 +2,9 @@
 @import "font";
 @import "~font-awesome/scss/font-awesome";
 
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
 // Variables
 @import "variables";
 
@@ -10,25 +13,20 @@
 @import "question-list";
 @import "title-name";
 
-// Bootstrap
-@import '~bootstrap/scss/bootstrap';
 
 .header {
     padding: 0px 30px;
     height: 5vh;
-    border-bottom: solid 1px #c5c5c5;
+    color: #fff;
+    font-size: 16px;
+    background: linear-gradient(#6f6f6f, #3b3c3b, #5d5d5f);
 }
 
 .content-container {
-    // background-image: url('/resources/assets/images/bg1.jpg');
-    margin: 0 -15px;
+    padding: 0px !important;
     .content {
-        background-color: rgba(25, 29, 36, 0.7);
-        margin-left: -15px;
-        margin-right: -15px;
+        background-color: rgba(25, 29, 36, 0.75);
         height: 92vh;
-        color: rgb(198, 157, 74);
-        // color: #2a78af;
     }
 }
 
@@ -38,4 +36,12 @@
     font-size: 1.7vh;
     background-color: slategray;
     color: silver;
+}
+
+.logo {
+    width: 140px;
+    height: 50px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
 }
