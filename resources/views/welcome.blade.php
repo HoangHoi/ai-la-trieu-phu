@@ -28,7 +28,7 @@
                     @endfor
                 </div>
             </div>
-            <div class="col-lg-10 col-md-9" style="background-image: url(images/bg.png)">
+            <div class="col-lg-10 col-md-9 content-container" style="background-image: url(images/bg1.jpg)">
                 <div class="content" >
                     <div class="d-flex justify-content-end p-3">
                         <div class="" style="width: 136px">

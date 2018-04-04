@@ -20,6 +20,8 @@
         "axios": "^0.18.0",
         "font-awesome": "^4.7.0",
         "jquery-countdown": "^2.2.0",
-        "lodash": "^4.17.5"
+        "lodash": "^4.17.5",
+        "resolve-url-loader": "^2.3.0",
+        "sass-loader": "^6.0.7"
     }
 }

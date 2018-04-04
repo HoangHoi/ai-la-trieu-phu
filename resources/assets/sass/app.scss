@@ -19,13 +19,17 @@
     border-bottom: solid 1px #c5c5c5;
 }
 
-.content {
-    background-color: rgb(25, 29, 36);
-    margin-left: -15px;
-    margin-right: -15px;
-    height: 92vh;
-    color: rgb(198, 157, 74);
-    // color: #2a78af;
+.content-container {
+    // background-image: url('/resources/assets/images/bg1.jpg');
+    margin: 0 -15px;
+    .content {
+        background-color: rgba(25, 29, 36, 0.7);
+        margin-left: -15px;
+        margin-right: -15px;
+        height: 92vh;
+        color: rgb(198, 157, 74);
+        // color: #2a78af;
+    }
 }
 
 .footer {
