@@ -9,9 +9,7 @@
 </head>
 
 <body>
-    <div class="d-flex flex-row-reverse align-items-center header">
-        <span>Hoàng Hữu Hợi</span>
-    </div>
+    @include('includes.nav')
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-2 col-md-3">

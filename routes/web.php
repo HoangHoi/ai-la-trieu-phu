@@ -14,7 +14,7 @@
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('session', 'UserController@session')->name('session');
 Route::post('register', 'UserController@register')->name('register');
-Route::post('logout', 'UserController@logout')->name('logout');
+Route::get('logout', 'UserController@logout')->name('logout');
 
 Route::group(['prefix' => 'questions'], function () {
     Route::get('/', 'QuestionController@index')->name('questions.index');

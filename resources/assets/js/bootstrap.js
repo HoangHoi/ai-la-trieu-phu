@@ -13,6 +13,7 @@ try {
 
     require('bootstrap');
     require('jquery-countdown');
+    require('./animate');
 } catch (e) {}
 
 /**

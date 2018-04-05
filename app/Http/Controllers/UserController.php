@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\RegisterRequest;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
@@ -25,8 +26,13 @@ class UserController extends Controller
         return redirect()->route('home');
     }
 
-    public function logout() {
-        return 'logout';
+    public function logout(Request $request)
+    {
+        Auth::logout();
+
+        $request->session()->invalidate();
+
+        return redirect('/');
     }
 
     protected function create(array $data)
