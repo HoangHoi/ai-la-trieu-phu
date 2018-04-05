@@ -20,6 +20,7 @@ class CreateDatabase extends Migration
             $table->string('school', 50);
             $table->string('phone_number', 20);
             $table->unsignedInteger('birth_year');
+            $table->rememberToken();
             $table->timestamps();
         });
 

@@ -11,6 +11,16 @@
 |
 */
 
-Route::get('/', function () {
-    return view('question');
+Route::get('/', 'HomeController@index')->name('home');
+Route::get('session', 'UserController@session')->name('session');
+Route::post('register', 'UserController@register')->name('register');
+Route::post('logout', 'UserController@logout')->name('logout');
+
+Route::group(['prefix' => 'questions'], function () {
+    Route::get('/', 'QuestionController@index')->name('questions.index');
+    Route::get('start', 'QuestionController@start')->name('questions.start');
+    Route::post('check-answer', 'QuestionController@currentQuestion')->name('questions.currentQuestion');
+    Route::get('next-question', 'QuestionController@nextQuestion')->name('questions.nextQuestion');
+    Route::post('check-answer', 'QuestionController@checkAnswer')->name('questions.checkAnswer');
+    Route::post('help', 'QuestionController@help')->name('questions.help');
 });
