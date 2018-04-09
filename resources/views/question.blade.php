@@ -19,8 +19,8 @@
                 <div class="content" >
                     @include('includes.countdown')
                     @include('includes.title')
-                    {{-- @include('includes.question') --}}
-                    @include('includes.time-over')
+                    @include('includes.question')
+                    {{-- @include('includes.time-over') --}}
                 </div>
             </div>
         </div>
@@ -28,6 +28,7 @@
     <div class="d-flex flex-row-reverse align-items-center footer">
         <span>Framgia © 2018</span>
     </div>
+    <script type="text/javascript">var timeOut = '{!! $timeOut or '' !!}'</script>
     <script type="text/javascript" src="{!! mix('/js/app.js') !!}"></script>
 </body>
 

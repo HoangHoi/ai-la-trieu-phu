@@ -32,7 +32,7 @@ class CreateDatabase extends Migration
             $table->string('c');
             $table->string('d');
             $table->string('correct_answer', 1);
-            $table->unsignedTinyInteger('lever');
+            $table->unsignedTinyInteger('level');
             $table->timestamps();
         });
 

@@ -1,5 +1,5 @@
 var labels = ['minutes', 'seconds'],
-    nextYear = (new Date().getFullYear() + 1) + '/01/01',
+    finishTime = moment().add(timeOut,'s').format('YYYY/MM/DD HH:mm:ss'),
     template = _.template($('#countdown-template').html()),
     currDate = '00:00',
     nextDate = '00:00',
@@ -34,7 +34,7 @@ labels.forEach(function(label, i) {
     }));
 });
 // Starts the countdown
-$example.countdown(nextYear, (event) => {
+$example.countdown(finishTime, (event) => {
     var newDate = event.strftime('%M:%S'),
         data;
     if (newDate !== nextDate) {
@@ -59,4 +59,6 @@ $example.countdown(nextYear, (event) => {
             }, 50, $node);
         });
     }
+}).on('finish.countdown', () => {
+    console.log('finish');
 });
