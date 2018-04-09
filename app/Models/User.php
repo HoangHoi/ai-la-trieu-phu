@@ -56,4 +56,9 @@ class User extends Model implements Authenticatable
     {
         return 'remember_token';
     }
+
+    public function questions()
+    {
+        return $this->belongsToMany(Question::class, 'user_question');
+    }
 }

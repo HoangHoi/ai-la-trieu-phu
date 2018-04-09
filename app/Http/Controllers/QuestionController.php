@@ -14,8 +14,9 @@ class QuestionController extends Controller
 
     public function __construct(QuestionService $questionService)
     {
-        $this->middleware('auth');
-        $this->middleware('intest')->except(['index']);
+        // $this->middleware('auth');
+        // $this->middleware('intest')->except(['index']);
+        // $this->middleware('timeout')->except(['index']);
         $this->questionService = $questionService;
     }
 
@@ -41,9 +42,18 @@ class QuestionController extends Controller
 
     public function nextQuestion()
     {
+        if (!session()->get('test.current_question.answer_is_correct', false)) {
+            return response()->json(['status' => 'cant_continue'], 400);
+        }
 
-        $question = $this->questionService->nextQuestion();
-        return array_except($question->toArray(), ['correct_answer']);
+        $currentQuestionNumber = session()->get('test.current_question.number');
+        if ($currentQuestionNumber >= config('question.max')) {
+            return response()->json(['status' => 'question_max'], 400);
+        }
+
+        $question = $this->questionService->nextQuestion()->toArray();
+        $question['number'] = session()->get('test.current_question.number');
+        return array_except($question, ['correct_answer']);
     }
 
     public function currentQuestion()
@@ -54,16 +64,42 @@ class QuestionController extends Controller
 
     public function checkAnswer(Request $request)
     {
-        $answer = $request->get('answer', null);
-        $currentQuestion = session()->get('test.current_question');
-        if ($answer == $currentQuestion['correct_answer']) {
-            return true;
+        // $currentAnswer = session()->get('test.current_question.answer');
+        $currentAnswer = null;
+        if (!$currentAnswer) {
+            $currentAnswer = $request->get('answer', null);
+            if (!$currentAnswer) {
+                return response()->json(['status' => 'incorrect']);
+            }
+
+            session()->put('test.current_question.answer', $currentAnswer);
+            $this->saveAnswer($request->user());
         }
-        return false;
+
+        $currentQuestion = session()->get('test.current_question');
+        if ($currentAnswer == $currentQuestion['data']['correct_answer']) {
+            session()->put('test.current_question.answer_is_correct', true);
+            return response()->json(['status' => 'correct']);
+        }
+
+        session()->put('test.current_question.answer_is_correct', false);
+        return response()->json(['status' => 'incorrect']);
     }
 
     public function help()
     {
         return 'help';
+    }
+
+    protected function saveAnswer($user)
+    {
+        $now = Carbon::now()->toDateTimeString();
+        $questionId = session()->get('test.current_question.data.id');
+        $user->questions()->attach($questionId, [
+            'answer' => session()->get('test.current_question.answer'),
+            'order_number' => session()->get('test.current_question.number'),
+            'created_at' => $now,
+            'updated_at' => $now,
+        ]);
     }
 }

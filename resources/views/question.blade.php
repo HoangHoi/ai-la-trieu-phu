@@ -18,7 +18,7 @@
             <div class="col-lg-10 col-md-9 content-container" style="background-image: url(images/bg2.jpg)">
                 <div class="content" >
                     @include('includes.countdown')
-                    @include('includes.title')
+                    {{-- @include('includes.title') --}}
                     @include('includes.question')
                     {{-- @include('includes.time-over') --}}
                 </div>
@@ -28,7 +28,13 @@
     <div class="d-flex flex-row-reverse align-items-center footer">
         <span>Framgia © 2018</span>
     </div>
-    <script type="text/javascript">var timeOut = '{!! $timeOut or '' !!}'</script>
+    <script type="text/javascript">
+        var timeOut = '{!! $timeOut or '' !!}';
+        var answerUrl = '{!! route('questions.checkAnswer') !!}';
+        var homeUrl = '{!! route('home') !!}';
+        var nextQuestionUrl = '{!! route('questions.nextQuestion') !!}';
+        var questionNumber = '{!! $question['number'] !!}';
+    </script>
     <script type="text/javascript" src="{!! mix('/js/app.js') !!}"></script>
 </body>
 

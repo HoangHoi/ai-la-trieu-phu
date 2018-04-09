@@ -19,7 +19,6 @@ class InTest
             if ($request->ajax()) {
                 return ['status' => config('status.no_test'), 'redirect_to' => route('home')];
             }
-
             return redirect()->route('home');
         }
         return $next($request);

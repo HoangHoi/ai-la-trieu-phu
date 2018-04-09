@@ -18,7 +18,7 @@ Route::get('logout', 'UserController@logout')->name('logout');
 
 Route::group(['prefix' => 'questions'], function () {
     Route::get('/', 'QuestionController@index')->name('questions.index');
-    Route::get('start', 'QuestionController@start')->name('questions.start');
+    // Route::get('start', 'QuestionController@start')->name('questions.start');
     Route::post('check-answer', 'QuestionController@currentQuestion')->name('questions.currentQuestion');
     Route::get('next-question', 'QuestionController@nextQuestion')->name('questions.nextQuestion');
     Route::post('check-answer', 'QuestionController@checkAnswer')->name('questions.checkAnswer');

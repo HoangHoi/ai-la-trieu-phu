@@ -20,11 +20,26 @@
 @import "timeout";
 
 .header {
-    padding: 0px 30px;
+    padding: 0px 15px;
     height: 5vh;
     color: #fff;
     font-size: 16px;
     background: linear-gradient(#6f6f6f, #3b3c3b, #5d5d5f);
+    .header-title {
+        color: #fff;
+        text-shadow:
+            0 0 10px #c3c3c3,
+            0 0 20px #c3c3c3,
+            0 0 30px #c3c3c3,
+            0 0 40px #2e4585,
+            0 0 70px #2e4585,
+            0 0 80px #2e4585,
+            0 0 100px #2e4585,
+            0 0 150px #2e4585;
+        &:hover {
+            text-decoration: none;
+        }
+    }
 }
 
 .content-container {
