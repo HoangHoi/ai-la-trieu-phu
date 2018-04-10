@@ -69,7 +69,7 @@ class QuestionController extends Controller
         if (!$currentAnswer) {
             $currentAnswer = $request->get('answer', null);
             if (!$currentAnswer) {
-                return response()->json(['status' => 'incorrect']);
+                return response()->json(['status' => 'incorrect', 'choose' => $currentAnswer]);
             }
 
             session()->put('test.current_question.answer', $currentAnswer);
@@ -79,11 +79,11 @@ class QuestionController extends Controller
         $currentQuestion = session()->get('test.current_question');
         if ($currentAnswer == $currentQuestion['data']['correct_answer']) {
             session()->put('test.current_question.answer_is_correct', true);
-            return response()->json(['status' => 'correct']);
+            return response()->json(['status' => 'correct', 'choose' => $currentAnswer]);
         }
 
         session()->put('test.current_question.answer_is_correct', false);
-        return response()->json(['status' => 'incorrect']);
+        return response()->json(['status' => 'incorrect', 'choose' => $currentAnswer]);
     }
 
     public function help()

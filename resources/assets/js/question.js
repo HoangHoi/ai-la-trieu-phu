@@ -1,3 +1,6 @@
+let {getIncorrectMessage, getCorrectMessage} = require('./message');
+let canContinue = true;
+
 $('.question-answer').on('click', '.question-answer-item', (item) => {
     let answerId = $(item.currentTarget).data('id');
     $('#confirm-answer-key').html(answerId);
@@ -5,7 +8,7 @@ $('.question-answer').on('click', '.question-answer-item', (item) => {
     $('#confirm-answer-modal').modal('show');
 });
 
-let drawQuestion = (question) => {
+const drawQuestion = (question) => {
     $('#question-content').html(question.content);
     $('#question-answer-item-a').html(question.a);
     $('#question-answer-item-b').html(question.b);
@@ -13,12 +16,12 @@ let drawQuestion = (question) => {
     $('#question-answer-item-d').html(question.d);
 };
 
-let selectCurrentQuestion = (questionNumer) => {
+const selectCurrentQuestion = (questionNumer) => {
     $('.question-item').removeClass('active');
     $('#question-' + questionNumer).addClass('active');
 };
 
-let nextQuestion = () => {
+const nextQuestion = () => {
     axios.get(nextQuestionUrl)
         .then((response) => {
             drawQuestion(response.data);
@@ -29,12 +32,21 @@ let nextQuestion = () => {
         });
 };
 
-let stopTest = () => {
-    $('#stop-modal').modal('show');
+const stopTest = () => {
+    canContinue = false;
+    // $('#result-modal').modal('show');
 };
 
-$('#stop-modal').on('hidden.bs.modal', (e) => {
-    console.log('redirect');
+const showResult = (status, choose) => {
+    let content = status == 'correct' ? getCorrectMessage(choose) : getIncorrectMessage(choose);
+    $('#result-modal-content').html(content);
+    $('#result-modal').modal('show');
+};
+
+$('#result-modal').on('hidden.bs.modal', (e) => {
+    if (!canContinue) {
+        return window.location.replace(homeUrl);
+    }
 });
 
 $('#submit-answer').on('click', () => {
@@ -45,6 +57,7 @@ $('#submit-answer').on('click', () => {
     };
     axios.post(answerUrl, data)
         .then((response) => {
+            showResult(response.data.status, response.data.choose);
             if (response.data.status == 'correct') {
                 questionNumber++;
                 return nextQuestion();

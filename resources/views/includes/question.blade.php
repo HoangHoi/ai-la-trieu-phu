@@ -34,10 +34,10 @@
 </div>
 
 <!-- Stop Modal -->
-<div class="modal fade" id="stop-modal" tabindex="-1" role="dialog" aria-labelledby="stop-modal" aria-hidden="true">
+<div class="modal fade" id="result-modal" tabindex="-1" role="dialog" aria-labelledby="result-modal" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
-            <div class="modal-body" style="font-size: 23px;" id="stop-modal-content">
+            <div class="modal-body" style="font-size: 23px;" id="result-modal-content">
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary" data-dismiss="modal">Đồng ý</button>
