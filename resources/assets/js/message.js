@@ -47,5 +47,13 @@ const getCorrectMessage = (choose) => {
     return correctAnswerMessage.replace(/:choose:/g, choose);
 };
 
+const getFinishMessage = (choose) => {
+    let message = 'Xin chúc mừng! <br/> Bạn đã vượt qua :number: câu hỏi của chúng tôi.'.replace(/:number:/g, questionNumber);
+    let thankMessage = thankMessages[randomIndex(thankMessages.length)].replace(/:choose:/g, choose);
+    let goodByeMessage = goodByeMessages[randomIndex(goodByeMessages.length)].replace(/:choose:/g, choose);
+    return message + '<br/>' + thankMessage + '<br/>' + goodByeMessage;
+};
+
 module.exports.getIncorrectMessage = getIncorrectMessage;
 module.exports.getCorrectMessage = getCorrectMessage;
+module.exports.getFinishMessage = getFinishMessage;

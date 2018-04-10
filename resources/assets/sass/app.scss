@@ -18,6 +18,7 @@
 @import "start-button";
 @import "info";
 @import "timeout";
+@import "result";
 
 .header {
     padding: 0px 15px;
@@ -64,4 +65,12 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100%;
+}
+
+.btn {
+    border-radius: 0 !important;
+}
+
+.modal-content {
+    border-radius: 0 !important;
 }

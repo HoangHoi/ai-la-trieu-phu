@@ -27,7 +27,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Chưa chắc</button>
-                <button type="button" class="btn btn-primary" id="submit-answer">Chắc chắn</button>
+                <button type="button" class="btn btn-success" id="submit-answer">Chắc chắn</button>
             </div>
         </div>
     </div>
@@ -40,7 +40,7 @@
             <div class="modal-body" style="font-size: 23px;" id="result-modal-content">
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary" data-dismiss="modal">Đồng ý</button>
+                <button type="button" class="btn btn-success" data-dismiss="modal">Đồng ý</button>
             </div>
         </div>
     </div>

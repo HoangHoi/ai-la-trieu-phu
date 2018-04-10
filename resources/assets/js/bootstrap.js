@@ -15,7 +15,7 @@ try {
 
     require('bootstrap');
     require('jquery-countdown');
-    require('./animate');
+    require('./animate-css');
 } catch (e) {}
 
 /**

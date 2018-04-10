@@ -28,11 +28,17 @@
     <div class="d-flex flex-row-reverse align-items-center footer">
         <span>Framgia © 2018</span>
     </div>
+    <div class="result" id="result">
+        <div class="result-body">
+            <span id="result-content">Chính xác</span>
+        </div>
+    </div>
     <script type="text/javascript">
         var timeOut = '{!! $timeOut or '' !!}';
         var answerUrl = '{!! route('questions.checkAnswer') !!}';
         var homeUrl = '{!! route('home') !!}';
         var nextQuestionUrl = '{!! route('questions.nextQuestion') !!}';
+        var maxQuestion = {!! config('question.max') !!};
         var questionNumber = '{!! $question['number'] !!}';
     </script>
     <script type="text/javascript" src="{!! mix('/js/app.js') !!}"></script>

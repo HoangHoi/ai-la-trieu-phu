@@ -1,4 +1,4 @@
-let {getIncorrectMessage, getCorrectMessage} = require('./message');
+let {getIncorrectMessage, getCorrectMessage, getFinishMessage} = require('./message');
 let canContinue = true;
 
 $('.question-answer').on('click', '.question-answer-item', (item) => {
@@ -34,16 +34,52 @@ const nextQuestion = () => {
 
 const stopTest = () => {
     canContinue = false;
-    // $('#result-modal').modal('show');
+};
+
+const testComplete = () => {
+
+};
+
+const handleTimeOut = () => {
+
+};
+
+const correct = () => {
+    $('.result').fadeIn(300, () => {
+        $('#result-content').animateCss('zoomIn', () => {
+            $('#result-content').fadeOut(300, () => {
+                $('.result').fadeOut(200, () => {
+                    $('#result-content').css('display', 'block');
+                    questionNumber++;
+                    return nextQuestion();
+                });
+            });
+        });
+    });
 };
 
 const showResult = (status, choose) => {
-    let content = status == 'correct' ? getCorrectMessage(choose) : getIncorrectMessage(choose);
+    console.log(questionNumber);
+    let content;
+
+    if (status == 'correct') {
+        if (questionNumber < maxQuestion) {
+            return correct();
+        }
+
+        content = getFinishMessage(choose);
+    } else {
+        content = getIncorrectMessage(choose);
+    }
+
+    stopTest();
+
     $('#result-modal-content').html(content);
     $('#result-modal').modal('show');
 };
 
 $('#result-modal').on('hidden.bs.modal', (e) => {
+    console.log(canContinue, questionNumber, maxQuestion);
     if (!canContinue) {
         return window.location.replace(homeUrl);
     }
@@ -58,14 +94,10 @@ $('#submit-answer').on('click', () => {
     axios.post(answerUrl, data)
         .then((response) => {
             showResult(response.data.status, response.data.choose);
-            if (response.data.status == 'correct') {
-                questionNumber++;
-                return nextQuestion();
-            }
-
-            return stopTest();
         })
         .catch((error) => {
             console.log(error);
         });
 });
+
+module.exports.handleTimeOut = handleTimeOut;

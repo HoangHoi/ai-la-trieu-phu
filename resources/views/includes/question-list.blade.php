@@ -6,7 +6,7 @@
             </div>
         @endfor
         <div class="d-flex align-items-center question-group" id="group_question_{!! $i !!}">
-            <span><i class="fa fa-folder-open" aria-hidden="true"></i> Gói câu hỏi {!! $i !!}</span>
+            <span><i class="fa fa-folder-open" aria-hidden="true"></i> {!! config('question.level_label.' . $i) !!}</span>
         </div>
     @endfor
 </div>

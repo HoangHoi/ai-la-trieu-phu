@@ -1,0 +1,27 @@
+.result {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1050;
+    overflow: hidden;
+    outline: 0;
+    display: none;
+    background-color: rgba(0, 0, 0, 0.5);
+    .result-body {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+
+        span {
+            color: #fff;
+            text-transform: uppercase;
+            font-size: 100px;
+            font-weight: 900;
+            opacity: 0;
+        }
+    }
+}
