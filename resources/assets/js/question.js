@@ -1,7 +1,12 @@
-let {getIncorrectMessage, getCorrectMessage, getFinishMessage} = require('./message');
+let {getIncorrectMessage, getCorrectMessage, getFinishMessage, getTimeOutMessage} = require('./message');
+let {countDown, pauseCountDown} = require('./count-down');
 let canContinue = true;
 
 $('.question-answer').on('click', '.question-answer-item', (item) => {
+    if (!canContinue) {
+        return;
+    }
+
     let answerId = $(item.currentTarget).data('id');
     $('#confirm-answer-key').html(answerId);
     $('#confirm-answer-modal').data('answer', answerId);
@@ -33,29 +38,12 @@ const nextQuestion = () => {
 };
 
 const stopTest = () => {
+    pauseCountDown();
     canContinue = false;
 };
 
 const testComplete = () => {
 
-};
-
-const handleTimeOut = () => {
-
-};
-
-const correct = () => {
-    $('.result').fadeIn(300, () => {
-        $('#result-content').animateCss('zoomIn', () => {
-            $('#result-content').fadeOut(300, () => {
-                $('.result').fadeOut(200, () => {
-                    $('#result-content').css('display', 'block');
-                    questionNumber++;
-                    return nextQuestion();
-                });
-            });
-        });
-    });
 };
 
 const showResult = (status, choose) => {
@@ -76,6 +64,28 @@ const showResult = (status, choose) => {
 
     $('#result-modal-content').html(content);
     $('#result-modal').modal('show');
+};
+
+const handleTimeOut = () => {
+    stopTest();
+    let content = getTimeOutMessage();
+
+    $('#result-modal-content').html(content);
+    $('#result-modal').modal('show');
+};
+
+const correct = () => {
+    $('.result').fadeIn(300, () => {
+        $('#result-content').animateCss('zoomIn', () => {
+            $('#result-content').fadeOut(300, () => {
+                $('.result').fadeOut(200, () => {
+                    $('#result-content').css('display', 'block');
+                    questionNumber++;
+                    return nextQuestion();
+                });
+            });
+        });
+    });
 };
 
 $('#result-modal').on('hidden.bs.modal', (e) => {
@@ -99,5 +109,8 @@ $('#submit-answer').on('click', () => {
             console.log(error);
         });
 });
+
+// Start count down
+countDown(handleTimeOut);
 
 module.exports.handleTimeOut = handleTimeOut;

@@ -37,7 +37,8 @@ class QuestionService
                 'number' => $nextQuestionNumber,
                 'data' => $nextQuestion->toArray(),
                 'answer' => null,
-                'answer_is_correct' => false,
+                'answer_is_correct' => null,
+                'time_left' => null,
             ],
             'questions_answered' => $questionsExcept,
         ];
@@ -60,7 +61,8 @@ class QuestionService
                 'number' => 0,
                 'data' => null,
                 'answer' => null,
-                'answer_is_correct' => false,
+                'answer_is_correct' => null,
+                'time_left' => null,
             ],
             'questions_answered' => [],
         ];

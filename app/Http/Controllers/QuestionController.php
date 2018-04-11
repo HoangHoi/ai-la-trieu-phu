@@ -27,16 +27,14 @@ class QuestionController extends Controller
         }
 
         $currentQuestion = session()->get('test.current_question');
-        $timeOut = 0;
-        $now = Carbon::now();
-        $endTime = Carbon::parse(session()->get('end_time', $now->toDateTimeString()));
-        if ($endTime->gt($now)) {
-            $timeOut = $endTime->diffInSeconds($now);
-        }
+
+        $canContinue = session()->get('test.current_question.time_left', null) == null ? 1 : 0;
+        $timeOut = $this->getTimeOut();
 
         return view('question', [
             'question' => $currentQuestion,
             'timeOut' => $timeOut,
+            'canContinue' => $canContinue,
         ]);
     }
 
@@ -83,6 +81,7 @@ class QuestionController extends Controller
         }
 
         session()->put('test.current_question.answer_is_correct', false);
+        session()->put('test.current_question.time_left', $this->getTimeOut());
         return response()->json(['status' => 'incorrect', 'choose' => $currentAnswer]);
     }
 
@@ -101,5 +100,22 @@ class QuestionController extends Controller
             'created_at' => $now,
             'updated_at' => $now,
         ]);
+    }
+
+    protected function getTimeOut()
+    {
+        $timeLeft = session()->get('test.current_question.time_left', null);
+        if ($timeLeft !== null) {
+            return $timeLeft;
+        }
+
+        $timeOut = 0;
+        $now = Carbon::now();
+        $endTime = Carbon::parse(session()->get('end_time', $now->toDateTimeString()));
+        if ($endTime->gt($now)) {
+            $timeOut = $endTime->diffInSeconds($now);
+        }
+
+        return $timeOut;
     }
 }

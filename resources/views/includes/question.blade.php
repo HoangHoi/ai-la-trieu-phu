@@ -37,7 +37,7 @@
 <div class="modal fade" id="result-modal" tabindex="-1" role="dialog" aria-labelledby="result-modal" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
-            <div class="modal-body" style="font-size: 23px;" id="result-modal-content">
+            <div class="modal-body" style="font-size: 23px; padding: 20px;" id="result-modal-content">
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-success" data-dismiss="modal">Đồng ý</button>

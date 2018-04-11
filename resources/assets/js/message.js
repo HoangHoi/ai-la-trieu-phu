@@ -36,9 +36,9 @@ const randomIndex = (length) => {
 
 const getIncorrectMessage = (choose) => {
     let inCorrectAnswerMessage = inCorrectAnswerMessages[randomIndex(inCorrectAnswerMessages.length)].replace(/:choose:/g, choose);
-    let rightAnswerMessage = rightAnswerMessages[randomIndex(rightAnswerMessages.length)].replace(/:number:/g, questionNumber);
-    let thankMessage = thankMessages[randomIndex(thankMessages.length)].replace(/:choose:/g, choose);
-    let goodByeMessage = goodByeMessages[randomIndex(goodByeMessages.length)].replace(/:choose:/g, choose);
+    let rightAnswerMessage = rightAnswerMessages[randomIndex(rightAnswerMessages.length)].replace(/:number:/g, questionNumber - 1);
+    let thankMessage = thankMessages[randomIndex(thankMessages.length)];
+    let goodByeMessage = goodByeMessages[randomIndex(goodByeMessages.length)];
     return inCorrectAnswerMessage + '<br/>' + rightAnswerMessage + '<br/>' + thankMessage + '<br/>' + goodByeMessage;
 };
 
@@ -48,12 +48,21 @@ const getCorrectMessage = (choose) => {
 };
 
 const getFinishMessage = (choose) => {
-    let message = 'Xin chúc mừng! <br/> Bạn đã vượt qua :number: câu hỏi của chúng tôi.'.replace(/:number:/g, questionNumber);
-    let thankMessage = thankMessages[randomIndex(thankMessages.length)].replace(/:choose:/g, choose);
-    let goodByeMessage = goodByeMessages[randomIndex(goodByeMessages.length)].replace(/:choose:/g, choose);
+    let message = 'Xin chúc mừng! <br/> Bạn đã vượt qua :number: câu hỏi của chúng tôi.'.replace(/:number:/g, questionNumber - 1);
+    let thankMessage = thankMessages[randomIndex(thankMessages.length)];
+    let goodByeMessage = goodByeMessages[randomIndex(goodByeMessages.length)];
     return message + '<br/>' + thankMessage + '<br/>' + goodByeMessage;
+};
+
+const getTimeOutMessage = () => {
+    let message = 'Hết giờ!';
+    let correct = 'Bạn đã vượt qua :number: câu hỏi của chúng tôi.'.replace(/:number:/g, questionNumber - 1);
+    let thankMessage = thankMessages[randomIndex(thankMessages.length)];
+    let goodByeMessage = goodByeMessages[randomIndex(goodByeMessages.length)];
+    return message + '<br/>' + correct + '<br/>' + thankMessage + '<br/>' + goodByeMessage;
 };
 
 module.exports.getIncorrectMessage = getIncorrectMessage;
 module.exports.getCorrectMessage = getCorrectMessage;
 module.exports.getFinishMessage = getFinishMessage;
+module.exports.getTimeOutMessage = getTimeOutMessage;
