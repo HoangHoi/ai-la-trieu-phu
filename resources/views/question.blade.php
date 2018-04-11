@@ -33,6 +33,7 @@
             <span id="result-content">Chính xác</span>
         </div>
     </div>
+    <canvas id="firework"></canvas>
     <script type="text/javascript">
         var canContinue = '{!! $canContinue !!}';
         var timeOut = '{!! $timeOut or '' !!}';

@@ -40,7 +40,8 @@ class QuestionController extends Controller
 
     public function nextQuestion()
     {
-        if (!session()->get('test.current_question.answer_is_correct', false)) {
+        $previousAnswer = session()->get('test.current_question.answer_is_correct', null);
+        if ($previousAnswer == null || $previousAnswer == false) {
             return response()->json(['status' => 'cant_continue'], 400);
         }
 
