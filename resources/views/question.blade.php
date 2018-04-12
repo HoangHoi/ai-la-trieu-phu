@@ -35,7 +35,7 @@
     </div>
     <canvas id="firework"></canvas>
     <script type="text/javascript">
-        var canContinue = '{!! $canContinue !!}';
+        var canContinue = {!! $canContinue !!};
         var timeOut = '{!! $timeOut or '' !!}';
         var answerUrl = '{!! route('questions.checkAnswer') !!}';
         var homeUrl = '{!! route('home') !!}';

@@ -1,7 +1,6 @@
 let {getIncorrectMessage, getCorrectMessage, getFinishMessage, getTimeOutMessage} = require('./message');
 let {countDown, pauseCountDown} = require('./count-down');
 let {firework} = require('./firework');
-let canContinue = true;
 
 $('.question-answer').on('click', '.question-answer-item', (item) => {
     if (!canContinue) {
@@ -56,6 +55,7 @@ const showResult = (status, choose) => {
             return correct();
         }
 
+        questionNumber++;
         content = getFinishMessage(choose);
         testComplete();
     } else {
@@ -114,5 +114,9 @@ $('#submit-answer').on('click', () => {
 
 // Start count down
 countDown(handleTimeOut);
+
+if (!canContinue) {
+    pauseCountDown();
+}
 
 module.exports.handleTimeOut = handleTimeOut;

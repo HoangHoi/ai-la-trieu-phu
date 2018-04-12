@@ -63,8 +63,7 @@ class QuestionController extends Controller
 
     public function checkAnswer(Request $request)
     {
-        // $currentAnswer = session()->get('test.current_question.answer');
-        $currentAnswer = null;
+        $currentAnswer = session()->get('test.current_question.answer');
         if (!$currentAnswer) {
             $currentAnswer = $request->get('answer', null);
             if (!$currentAnswer) {
