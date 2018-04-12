@@ -44,6 +44,7 @@ const stopTest = () => {
 // firework('firework');
 const testComplete = () => {
     // firework();
+    $('#firework').show();
 };
 
 const showResult = (status, choose) => {
@@ -76,7 +77,9 @@ const handleTimeOut = () => {
     $('#result-modal').modal('show');
 };
 
+// firework('firework');
 const correct = () => {
+    // firework('firework');
     $('.result').fadeIn(300, () => {
         $('#result-content').animateCss('zoomIn', () => {
             $('#result-content').fadeOut(300, () => {
@@ -115,7 +118,7 @@ $('#submit-answer').on('click', () => {
 // Start count down
 countDown(handleTimeOut);
 
-if (!canContinue) {
+if (typeof canContinue != 'undefined' && !canContinue) {
     pauseCountDown();
 }
 

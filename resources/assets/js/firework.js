@@ -130,16 +130,21 @@ class Firework {
   }
 }
 
-// let canvas = document.getElementById('birthday')
-// let ctx = canvas.getContext('2d')
+;(function update() {
+    let canvas = document.getElementById('firework');
+    if (!canvas) {
+        return;
+    }
+    window.canvas = canvas;
+    window.ctx = canvas.getContext('2d');
 
-// let birthday = new Birthday
-// window.onresize = () => birthday.resize()
-// document.onclick = evt => birthday.onClick(evt)
-// document.ontouchstart = evt => birthday.onClick(evt)
+    window.birthday = new Birthday;
+    window.onresize = () => birthday.resize();
+    document.onclick = evt => birthday.onClick(evt);
+    document.ontouchstart = evt => birthday.onClick(evt);
 
-
-// ;(function update() {
-//   requestAnimationFrame(update)
-//   birthday.update()
-// }())
+    ;(function update() {
+        requestAnimationFrame(update);
+        birthday.update();
+    }())
+}())
