@@ -24,3 +24,14 @@ Route::group(['prefix' => 'questions'], function () {
     Route::post('check-answer', 'QuestionController@checkAnswer')->name('questions.checkAnswer');
     Route::post('help', 'QuestionController@help')->name('questions.help');
 });
+
+Route::group(['prefix' => 'admin-13H10O1994I11235813', 'namespace' => 'Admin'], function () {
+    Route::get('/', 'AdminController@index')->name('admin.index');
+    Route::group(['prefix' => 'questions'], function () {
+        Route::get('/', 'QuestionController@index')->name('admin.questions.index');
+        Route::post('/', 'QuestionController@store')->name('admin.questions.store');
+        Route::get('{question}', 'QuestionController@delete')->name('admin.questions.delete');
+    });
+    Route::post('upload/image', 'UploadController@image')->name('admin.upload.image');
+
+});

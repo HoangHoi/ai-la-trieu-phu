@@ -14,9 +14,9 @@ class QuestionController extends Controller
 
     public function __construct(QuestionService $questionService)
     {
-        // $this->middleware('auth');
-        // $this->middleware('intest')->except(['index']);
-        // $this->middleware('timeout')->except(['index']);
+        $this->middleware('auth');
+        $this->middleware('intest')->except(['index']);
+        $this->middleware('timeout')->except(['index']);
         $this->questionService = $questionService;
     }
 

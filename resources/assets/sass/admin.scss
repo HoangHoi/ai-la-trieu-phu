@@ -1,0 +1,44 @@
+// Fonts
+@import "font";
+@import "~font-awesome/scss/font-awesome";
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+@import "variables";
+// @import "editor";
+
+.question-item {
+    margin-bottom: 20px;
+
+    .question-content {
+        font-size: 25px;
+        margin-bottom: 30px;
+        user-select: none;
+    }
+
+    .question-answer {
+        font-size: 23px;
+        display: flex;
+        justify-items: center;
+        align-items: center;
+        flex-wrap: wrap;
+        .question-answer-item {
+            width: 50%;
+            margin-bottom: 20px;
+            line-height: 28px;
+            padding: 5px 10px;
+            user-select: none;
+        }
+
+        .question-answer-correct {
+            font-weight: 900;
+        }
+    }
+}
+
+.question-create {
+    margin-bottom: 20px;
+    background-color: antiquewhite;
+    padding: 15px;
+}
