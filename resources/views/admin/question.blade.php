@@ -16,7 +16,7 @@
             @include('admin.includes.question-item')
         @endforeach
     </div>
-    {{-- <script type="text/javascript" src="{!! url('/ckeditor5/ckeditor.js') !!}"></script> --}}
+    {{-- <script type="text/javascript" src="{!! url('/js/editor.js') !!}"></script> --}}
     <script type="text/javascript" src="{!! mix('/js/admin.js') !!}"></script>
 </body>
 

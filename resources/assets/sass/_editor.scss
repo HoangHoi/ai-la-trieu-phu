@@ -1,0 +1,218 @@
+.ck-editor__editable {
+    min-height: 300px;
+  }
+
+  /**
+   * Colors configured by the user.
+   *
+   * @type Map
+   * @example
+   *		$ck-colors: ( 'foreground': red );
+   * @see $_ck-colors
+   */
+
+  /**
+   * Internal map with default colors.
+   *
+   * @type Map
+   * @see ck-color-add
+   */
+
+  /**
+   * Returns a color of given name and lightness offset.
+   *
+   * @param {String} $name [ 'background' ] - Name of the color.
+   * @param {Number} $offset [ 0 ] - Offset of the lightness.
+   * @return {String}
+   * @see $_ck-colors
+   */
+
+  /**
+   * Adds a color to internal color map.
+   *
+   * @example
+   *		@include ck-color-add( ( 'special': yellow, 'hover': #00FF00 ) );
+   * @param {Map} $map - A map with new colors.
+   * @see $_ck-colors
+   */
+
+  /**
+   * Default border-radius value.
+   *
+   */
+
+  /**
+   * Implements rounded corner interface for .ck-rounded-corners class.
+   *
+   * @see $ck-border-radius
+   */
+
+  /**
+   * Default spacing value ("unit").
+   *
+   */
+
+  /**
+   * Internal map with default spacings.
+   *
+   * @type Map
+   * @see ck-spacing
+   */
+
+  /**
+   * Returns a spacing value with units for given name.
+   *
+   * @param {String} $spacing [ 'standard' ] - Spacing level.
+   * @return {String}
+   * @see $ck-def-spacing
+   * @see $ck-def-spacings
+   */
+
+  code {
+    background-color: rgba(200, 200, 200, 0.3);
+    padding: 0.2em;
+    border-radius: 2px;
+  }
+
+  blockquote {
+    border-left: solid 5px #CCC;
+    padding-left: 20px;
+    margin-left: 0;
+    font-style: italic;
+    overflow: hidden;
+  }
+
+  /**
+   * Default spacing value ("unit").
+   *
+   */
+
+  /**
+   * Internal map with default spacings.
+   *
+   * @type Map
+   * @see ck-spacing
+   */
+
+  /**
+   * Returns a spacing value with units for given name.
+   *
+   * @param {String} $spacing [ 'standard' ] - Spacing level.
+   * @return {String}
+   * @see $ck-def-spacing
+   * @see $ck-def-spacings
+   */
+
+  /**
+   * Base font size.
+   *
+   * @see $ck-font-sizes
+   */
+
+  /**
+   * Base line height.
+   */
+
+  /**
+   * Base font face.
+   *
+   */
+
+  /**
+   * Base font sizes for scaling.
+   *
+   * @see ck-font-size
+   */
+
+  /**
+   * Returns font-size in units for given level.
+   *
+   * @param {Number} $level [ 0 ] - Size of the font.
+   * @return {String}
+   * @see $ck-font-sizes
+   * @see $ck-font-size-base
+   */
+
+  .ck-heading_heading1 {
+    font-size: 1.5em;
+  }
+
+  .ck-heading_heading2 {
+    font-size: 1.3em;
+  }
+
+  .ck-heading_heading3 {
+    font-size: 1.1em;
+  }
+
+  [class*="ck-heading_"] {
+    line-height: 21.6px;
+    padding: 9.6px;
+  }
+
+  [class*="ck-heading_heading"] {
+    font-weight: bold;
+  }
+
+  .ck-dropdown.ck-heading-dropdown .ck-dropdown__button .ck-button__label {
+    width: 8em;
+  }
+
+  /**
+   * Default spacing value ("unit").
+   *
+   */
+
+  /**
+   * Internal map with default spacings.
+   *
+   * @type Map
+   * @see ck-spacing
+   */
+
+  /**
+   * Returns a spacing value with units for given name.
+   *
+   * @param {String} $spacing [ 'standard' ] - Spacing level.
+   * @return {String}
+   * @see $ck-def-spacing
+   * @see $ck-def-spacings
+   */
+
+  .ck-editor__editable .image {
+    text-align: center;
+    clear: both;
+  }
+
+  .ck-editor__editable .image.image-style-side,
+  .ck-editor__editable .image.image-style-align-left,
+  .ck-editor__editable .image.image-style-align-center,
+  .ck-editor__editable .image.image-style-align-right {
+    max-width: 50%;
+  }
+
+  .ck-editor__editable .image.image-style-side {
+    float: right;
+    margin-left: 2em;
+  }
+
+  .ck-editor__editable .image.image-style-align-left {
+    float: left;
+    margin-right: 2em;
+  }
+
+  .ck-editor__editable .image.image-style-align-center {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .ck-editor__editable .image.image-style-align-right {
+    float: right;
+    margin-left: 2em;
+  }
+
+  .ck-editor__editable .image > img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+  }

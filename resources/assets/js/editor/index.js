@@ -14,6 +14,7 @@ import ListPlugin from '@ckeditor/ckeditor5-list/src/list';
 import ParagraphPlugin from '@ckeditor/ckeditor5-paragraph/src/paragraph';
 import ImageuploadPlugin from '@ckeditor/ckeditor5-image/src/imageupload';
 import ImageUploadAdapter from './upload/imageuploadadapter';
+import BalloonToolbar from '@ckeditor/ckeditor5-ui/src/toolbar/balloon/balloontoolbar';
 
 let configEditor = (ckeditor) => {
     ckeditor.plugins.get('FileRepository').createAdapter = function(loader) {
@@ -47,11 +48,14 @@ let editor = (selector) => {
                 ParagraphPlugin,
                 ImageuploadPlugin
             ],
+            alignment: {
+                options: [ 'left', 'right' ]
+            },
             contextualToolbar: [ 'bold', 'italic', 'undo', 'redo' ],
             toolbar: {
                 items: [
-                    'headings',
-                    '|',
+                    'heading',
+                    // '|',
                     'bold',
                     'italic',
                     'underline',
@@ -61,24 +65,24 @@ let editor = (selector) => {
                     'blockQuote',
                     'undo',
                     'redo',
-                    'insertImage'
+                    'image'
                 ],
                 viewportTopOffset: 50
             },
             image: {
                 toolbar: [
-                    'imageStyleAlignLeft',
-                    'imageStyleAlignCenter',
-                    'imageStyleAlignRight',
-                    'imageStyleFull',
+                    'imageStyle:alignLeft',
+                    'imageStyle:alignCenter',
+                    'imageStyle:alignRight',
+                    'imageStyle:full',
                     '|',
                     'imageTextAlternative'
                 ],
                 styles: [
-                    'imageStyleFull',
-                    'imageStyleAlignLeft',
-                    'imageStyleAlignRight',
-                    'imageStyleAlignCenter'
+                    'full',
+                    'alignLeft',
+                    'alignRight',
+                    'alignCenter'
                 ]
             },
             language: 'en'
@@ -91,5 +95,5 @@ let editor = (selector) => {
             console.error(error.stack);
         });
 }
-
+window.editor = editor;
 export default editor;
