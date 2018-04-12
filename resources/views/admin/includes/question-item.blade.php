@@ -1,4 +1,4 @@
-<div class="card question-item">
+<div class="card question-item ck-editor__view">
     <div class="card-header">
         Câu {!! $question->id !!}
         ({!! $question->level !!})

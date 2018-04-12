@@ -1,5 +1,5 @@
 <div class="question-container">
-    <div class="question-content" id="question-content">
+    <div class="question-content ck-editor__view" id="question-content">
         {!! $question['data']['content'] !!}
     </div>
     <div class="d-flex flex-wrap question-answer">

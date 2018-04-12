@@ -1,6 +1,6 @@
-.ck-editor__editable {
-    min-height: 300px;
-  }
+// .ck-editor__view {
+//     min-height: 300px;
+//   }
 
   /**
    * Colors configured by the user.
@@ -179,39 +179,39 @@
    * @see $ck-def-spacings
    */
 
-  .ck-editor__editable .image {
+  .ck-editor__view .image {
     text-align: center;
     clear: both;
   }
 
-  .ck-editor__editable .image.image-style-side,
-  .ck-editor__editable .image.image-style-align-left,
-  .ck-editor__editable .image.image-style-align-center,
-  .ck-editor__editable .image.image-style-align-right {
+  .ck-editor__view .image.image-style-side,
+  .ck-editor__view .image.image-style-align-left,
+  .ck-editor__view .image.image-style-align-center,
+  .ck-editor__view .image.image-style-align-right {
     max-width: 50%;
   }
 
-  .ck-editor__editable .image.image-style-side {
+  .ck-editor__view .image.image-style-side {
     float: right;
     margin-left: 2em;
   }
 
-  .ck-editor__editable .image.image-style-align-left {
+  .ck-editor__view .image.image-style-align-left {
     float: left;
     margin-right: 2em;
   }
 
-  .ck-editor__editable .image.image-style-align-center {
+  .ck-editor__view .image.image-style-align-center {
     margin-left: auto;
     margin-right: auto;
   }
 
-  .ck-editor__editable .image.image-style-align-right {
+  .ck-editor__view .image.image-style-align-right {
     float: right;
     margin-left: 2em;
   }
 
-  .ck-editor__editable .image > img {
+  .ck-editor__view .image > img {
     display: block;
     margin: 0 auto;
     max-width: 100%;
