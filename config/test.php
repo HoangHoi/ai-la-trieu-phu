@@ -1,5 +1,5 @@
 <?php
 
 return [
-    'time_out' => 15,
+    'time_out' => 10,
 ];
