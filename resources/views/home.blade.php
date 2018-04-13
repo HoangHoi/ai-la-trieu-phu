@@ -12,8 +12,8 @@
     @include('includes.nav')
     <div class="container-fluid">
         <div class="row">
-            <div class="col-lg-12 content-container" style="background-image: url(images/bg1.jpg)">
-                <div class="content" style="padding-top: 10vh">
+            <div class="col-lg-12 home-content-container" style="background-image: url(images/bg1.jpg); ">
+                <div class="content" style="padding-top: 2vh">
                     @include('includes.title')
                     @guest
                         @include('includes.info')

@@ -1,13 +1,19 @@
 <div class="info-container">
     <div class="info">
-        <span>
-            Nhiều khi anh mong được một lần nói ra hết tất cả thay vì,
-            Ngồi lặng im nghe em kể về anh ta bằng đôi mắt lấp lánh
-            Đôi lúc em tránh ánh mắt của anh
-            Vì dường như lúc nào em cũng hiểu thấu lòng anh.
-            Ko thể ngắt lời, càng ko thể để giọt lệ nào đc rơi
-        </span>
+        <ul>
+            <li>Bạn có 7 phút để trả lời 15 câu hỏi.</li>
+            <li>Có 3 mốc quan trọng 5, 10, 15 tương ứng với 3 phần quà.</li>
+            <li>Mức độ khó của câu hỏi tăng dần.</li>
+            <li>Bạn trả lời càng được nhiều câu hỏi thì phần quà có giá trị càng lớn.</li>
+        </ul>
+        {{-- <span> --}}
+            {{-- Bạn có 7 phút để trả lời 15 câu hỏi.
+            Có 3 mốc quan trọng 5, 10, 15 tương ứng với 3 phần quà.
+            Mức độ khó của câu hỏi tăng dần.
+            Bạn trả lời càng được nhiều câu hỏi thì phần quà có giá trị càng lớn. --}}
+        {{-- </span> --}}
     </div>
+    @include('includes.viblo')
     <div class="d-flex justify-content-center">
         <div class="start-button" data-toggle="modal" data-target="#modal-register">
             <span>Đăng kí ngay!</span>
