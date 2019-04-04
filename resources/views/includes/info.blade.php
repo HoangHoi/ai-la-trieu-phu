@@ -1,7 +1,7 @@
 <div class="info-container">
     <div class="info">
         <ul>
-            <li>Bạn có 7 phút để trả lời 15 câu hỏi.</li>
+            <li>Bạn có 10 phút để trả lời 15 câu hỏi.</li>
             <li>Có 3 mốc quan trọng 5, 10, 15 tương ứng với 3 phần quà.</li>
             <li>Mức độ khó của câu hỏi tăng dần.</li>
             <li>Bạn trả lời càng được nhiều câu hỏi thì phần quà có giá trị càng lớn.</li>

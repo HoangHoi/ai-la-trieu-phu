@@ -26,9 +26,9 @@ class RegisterRequest extends FormRequest
         return [
             'name' => 'required',
             'email' => 'required',
-            'school' => 'required',
-            'phone_number' => 'required',
-            'birth_year' => 'required',
+            // 'school' => 'required',
+            // 'phone_number' => 'required',
+            // 'birth_year' => 'required',
         ];
     }
 }

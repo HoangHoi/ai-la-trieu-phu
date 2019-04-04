@@ -19,18 +19,18 @@
                         <label for="email">Email</label>
                         <input type="email" class="form-control" id="email" name="email" placeholder="Nhập địa chỉ email..." required>
                     </div>
-                    <div class="form-group">
+                    {{-- <div class="form-group">
                         <label for="school">Trường</label>
                         <input type="text" class="form-control" id="school" name="school" placeholder="Nhập tên trường đang học..." required>
-                    </div>
-                    <div class="form-group">
+                    </div> --}}
+                    {{-- <div class="form-group">
                         <label for="phone_number">Số điện thoại</label>
                         <input type="number" class="form-control" id="phone_number" name="phone_number" placeholder="Nhập số điện thoại..." required>
-                    </div>
-                    <div class="form-group">
+                    </div> --}}
+                    {{-- <div class="form-group">
                         <label for="birth_year">Năm sinh</label>
                         <input type="number" class="form-control" id="birth_year" name="birth_year" placeholder="Nhập năm sinh..." required>
-                    </div>
+                    </div> --}}
                     <div class="d-flex justify-content-end">
                         <button type="submit" class="btn btn-primary">Đăng kí</button>
                     </div>

@@ -10,7 +10,7 @@
     @include('includes.viblo')
     <div class="d-flex justify-content-center">
         <div class="start-button">
-            <a href="{!! route('questions.index') !!}"><span>Tôi đã sẵn sàng >></span></a>
+            <a href="{!! route('questions.index') !!}"><span>Chơi luôn >></span></a>
         </div>
     </div>
 </div>

@@ -48,7 +48,7 @@ const testComplete = () => {
 };
 
 const showResult = (status, choose) => {
-    console.log(questionNumber);
+    // console.log(questionNumber);
     let content;
 
     if (status == 'correct') {
@@ -94,9 +94,9 @@ const correct = () => {
 };
 
 $('#result-modal').on('hidden.bs.modal', (e) => {
-    console.log(canContinue, questionNumber, maxQuestion);
+    // console.log(canContinue, questionNumber, maxQuestion);
     if (!canContinue) {
-        return window.location.replace(homeUrl);
+        // return window.location.replace(homeUrl);
     }
 });
 

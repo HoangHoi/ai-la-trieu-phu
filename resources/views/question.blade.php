@@ -26,7 +26,7 @@
         </div>
     </div>
     <div class="d-flex flex-row-reverse align-items-center footer">
-        <span>Framgia © 2018</span>
+        <span>Sun* © {{ \Carbon\Carbon::now()->format('Y') }}</span>
     </div>
     <div class="result" id="result">
         <div class="result-body">

@@ -66,4 +66,8 @@ return [
 
     ],
 
+    'path' => [
+        'backup_database' => 'backup/database',
+    ],
+
 ];

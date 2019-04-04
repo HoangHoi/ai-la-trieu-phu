@@ -40,9 +40,12 @@ class UserController extends Controller
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
-            'school' => $data['school'],
-            'phone_number' => $data['phone_number'],
-            'birth_year' => $data['birth_year'],
+            'school' => 'unknown',
+            'phone_number' => '0987654321',
+            'birth_year' => '2222',
+            // 'school' => $data['school'],
+            // 'phone_number' => $data['phone_number'],
+            // 'birth_year' => $data['birth_year'],
         ]);
     }
 }
