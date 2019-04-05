@@ -27,6 +27,7 @@ Route::group(['prefix' => 'questions'], function () {
 
 Route::group(['prefix' => 'admin-13H10O1994I11235813', 'namespace' => 'Admin'], function () {
     Route::get('/', 'AdminController@index')->name('admin.index');
+    Route::get('result', 'AdminController@result')->name('admin.result');
     Route::group(['prefix' => 'questions'], function () {
         Route::get('/', 'QuestionController@index')->name('admin.questions.index');
         Route::post('/', 'QuestionController@store')->name('admin.questions.store');

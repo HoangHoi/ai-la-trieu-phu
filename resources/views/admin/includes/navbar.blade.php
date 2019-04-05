@@ -4,19 +4,19 @@
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-        {{-- <ul class="navbar-nav">
+        <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="{{ route('admin.questions.index') }}">Câu hỏi</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Features</a>
+                <a class="nav-link" href="{{ route('admin.result') }}">Kết quả</a>
             </li>
-            <li class="nav-item">
+            {{-- <li class="nav-item">
                 <a class="nav-link" href="#">Pricing</a>
-            </li>
-            <li class="nav-item">
+            </li> --}}
+            {{-- <li class="nav-item">
                 <a class="nav-link disabled" href="#">Disabled</a>
-            </li>
-        </ul> --}}
+            </li> --}}
+        </ul>
     </div>
 </nav>
